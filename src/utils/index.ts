@@ -27,3 +27,5 @@ export const getNeighbours = ([y, x]: number[], width: number, height: number, d
 
   return neighbours;
 };
+
+export const sum = (arr: number[]): number => arr.reduce((acc, curr) => acc + curr, 0);
