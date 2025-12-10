@@ -1,27 +1,23 @@
-import { Rhum } from "https://deno.land/x/rhum@v1.1.12/mod.ts";
 import { part1, part2 } from "./index.ts";
 import { getInput } from "../utils/index.ts";
-
-const { assertEquals } = Rhum.asserts;
-
-Rhum.testPlan("Advent of Code - Day Four", () => {
-  Rhum.testSuite("Part One", () => {
-    Rhum.testCase("should get 13", async () => {
+import { assertEquals } from "@std/assert";
+import { describe, it } from "@std/testing/bdd";
+describe("Advent of Code - Day Four", () => {
+  describe("Part One", () => {
+    it("should get 13", async () => {
       assertEquals(part1(await getInput("day4", "input-example")), 13);
     });
-    Rhum.testCase("should get 1397", async () => {
+    it("should get 1397", async () => {
       assertEquals(part1(await getInput("day4")), 1397);
     });
   });
 
-  Rhum.testSuite("Part Two", () => {
-    Rhum.testCase("should get 43", async () => {
+  describe("Part Two", () => {
+    it("should get 43", async () => {
       assertEquals(part2(await getInput("day4", "input-example")), 43);
     });
-    Rhum.testCase("should get 8758", async () => {
+    it("should get 8758", async () => {
       assertEquals(part2(await getInput("day4")), 8758);
     });
   });
 });
-
-Rhum.run();
